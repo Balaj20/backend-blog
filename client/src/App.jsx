@@ -5,6 +5,7 @@ import Signup from "./pages/Signup"
 import Header from "./components/Header"
 import Home from "./pages/Home"
 import Project from "./pages/Project"
+import Footer from "./components/Footer"
 import About from "./pages/About"
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
 
     </Routes>
     
-    
+    <Footer/>
     </BrowserRouter>
   )
 }
