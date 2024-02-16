@@ -25,7 +25,7 @@ app.use('/api/auth', authRoutes)
 
 
 app.use((error , req , res , next)=>{
-    const statuscode = error.statuscode || '500';
+    const statuscode = error.statuscode || '400';
     const message = error.message || 'Internal Server Error'
     res.status(statuscode).json({
         sucess: false,
