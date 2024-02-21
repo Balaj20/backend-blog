@@ -36,10 +36,10 @@ export default function Header() {
       </Button>
       <div className="flex gap-2 md:order-2">
         <Button className="w-12 h-10  sm:inline" color="gray" pill>
-          <FaMoon />
+          <FaMoon />  
         </Button>
         <Link to="/sign-up">
-          <Button gradientDuoTone="purpleToBlue" outline>Signin</Button>
+          <Button gradientDuoTone="purpleToBlue" outline>Signup</Button>
         </Link>
         <NavbarToggle />
       </div>

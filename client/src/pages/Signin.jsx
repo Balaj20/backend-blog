@@ -3,6 +3,7 @@ import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
   import { Link , useNavigate} from "react-router-dom";
   import { useDispatch, useSelector} from 'react-redux';
   import { signInStart, signInSucess, signInFailure } from "../redux/user/userSlice";
+import OAuth from "../components/OAuth";
   
   export default function Signin() {
     const [formData, setFormData] = useState({});
@@ -94,6 +95,7 @@ import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
                   "Sign in"
                 )}
               </Button>
+              <OAuth />
             </form>
             <div className="flex gap-2 text-sm mt-5">
               <span> Dont have an account?</span>
