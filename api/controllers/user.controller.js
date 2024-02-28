@@ -16,7 +16,7 @@ if(req.body.password){
     if(req.body.password.length < 6){
         return next(errorHandler(400,'Password must be at least 6 digits'))
     }
-    req.body.password = bcryptjs.hashSync(req.body.password,10)
+    req.body.password = bcryptjs.hashSync(req.body.password,10);
 }
 
 if(req.body.username){
@@ -30,8 +30,10 @@ return next(errorHandler(400, 'Username cannot contain spaces'));
         return next(errorHandler(400,'Username must be lowercase'))
     }
     if(!req.body.username.match(/^[a-zA-Z0-9]+$/)){
-        return next(errorHandler(400,'Username can only contain letters or numbers'))
+        return next(errorHandler(400,'Username can only contain letters or numbers'));
+        }
     }
+    
     try {
         const updatedUser = await User.findByIdAndUpdate(req.params.userId,{
             $set:{
@@ -49,4 +51,3 @@ return next(errorHandler(400, 'Username cannot contain spaces'));
     }
 }
 
-}
