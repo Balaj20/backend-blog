@@ -16,6 +16,7 @@ export default function CreatePost() {
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({});
+  console.log(formData);
   const handleUploadImage = async () => {
     try {
       if (!file) {
@@ -61,8 +62,10 @@ export default function CreatePost() {
             required
             id="title"
             className="flex-1"
+            onChange={(e) => setFormData({ ...formData, title: e.target.value})}
           />
-          <Select>
+
+          <Select onChange={(e) => setFormData({ ...formData, category: e.target.value})}>
             <option value="uncategorized">Select a category</option>
             <option value="javascript">Javascript</option>
             <option value="reactjs">React.js</option>
@@ -73,7 +76,8 @@ export default function CreatePost() {
           <FileInput
             type="file"
             accept="image/*"
-            onChange={(e) => setFile(e.target.files[0])}
+            onChange={(e) =>setFile(e.target.files[0])}
+      
           />
           <Button
             type="button"
@@ -110,6 +114,7 @@ export default function CreatePost() {
           placeholder="write something..."
           className="h-72 mb-12"
           required
+          onChange={(value)=>{setFormData({...formData,content:value})}}
         />
         <Button type="submit" gradientDuoTone="purpleToPink">
           Publish
